@@ -5,7 +5,13 @@ public abstract class Weapons {
     int speed = 0;
     int defence = 0;
     boolean twoHanded;
+
+    public boolean isTwoHanded() {
+        return twoHanded;
     }
+    }
+
+
 
 
 

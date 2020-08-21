@@ -1,8 +1,7 @@
 package ParticipantAttributes;
 
 import Interfaces.Participant;
-import ParticipantAttributes.ParticipantAttributes;
-import com.RaboAndCap.MayTheOddsBeEverInYourFavour.randomNameGenerator;
+import Other.randomNameGenerator;
 
 abstract class femaleParticipant extends ParticipantAttributes implements Participant {
     randomNameGenerator names = new randomNameGenerator();
@@ -29,10 +28,6 @@ abstract class femaleParticipant extends ParticipantAttributes implements Partic
 
     }
 
-    @Override
-    public void equip() {
-
-    }
 
     @Override
     public void rest() {

@@ -2,38 +2,43 @@ package ParticipantAttributes;
 
 import Equipables.Weapons;
 import Interfaces.Participant;
-import ParticipantAttributes.ParticipantAttributes;
-import com.RaboAndCap.MayTheOddsBeEverInYourFavour.randomNameGenerator;
+import Controllers.itemController;
+import Other.randomNameGenerator;
 
-public class maleParticipant extends ParticipantAttributes implements Participant {
+public abstract class maleParticipant extends ParticipantAttributes implements Participant {
     randomNameGenerator names = new randomNameGenerator();
+    itemController item = new itemController();
+
 
 
     @Override
     public void fight() {
 
+        }
 
-    }
+
+
 
     @Override
     public void heal() {
+        if (currentHP < 15 | currentHP < 30 | currentHP < 45) {
+            eat();
+        }
 
     }
 
     @Override
     public void run() {
+        if (currentHP < 15) {
+
+        }
 
     }
 
     @Override
     public void findItems() {
-
     }
 
-    @Override
-    public void equip() {
-
-    }
 
     @Override
     public void rest() {
@@ -42,12 +47,15 @@ public class maleParticipant extends ParticipantAttributes implements Participan
 
     @Override
     public void eat() {
+        findItems();
 
 
     }
 
     @Override
     public void equip(Weapons weapons) {
+        System.out.println(weapons);
+
     }
 
 

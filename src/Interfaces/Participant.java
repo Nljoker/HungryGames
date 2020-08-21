@@ -7,12 +7,11 @@ public interface Participant {
     void heal();
     void run();
     void findItems();
-    void equip();
     void rest();
     void eat();
 
-    void equip(Weapons weapon);
+    boolean isAlive();
+    String name();
 
-
-
+    void equip(Weapons weapons);
 }

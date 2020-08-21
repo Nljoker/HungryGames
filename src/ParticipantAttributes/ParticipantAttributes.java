@@ -1,27 +1,34 @@
 package ParticipantAttributes;
 
-import Interfaces.Participant;
-import com.RaboAndCap.MayTheOddsBeEverInYourFavour.randomNameGenerator;
-import Controllers.chanceController;
+import Equipables.*;
+import Interfaces.*;
+import Other.*;
+import Controllers.*;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.spi.AbstractResourceBundleProvider;
 
-public abstract class ParticipantAttributes {
+public class ParticipantAttributes {
 
     int strengthLevel;
     int defenceLevel;
     int attackLevel;
     int district;
+    int HP = 99;
+    int currentHP = HP;
     //0 = female | 1 = male
     int gender;
+    int MaleOrFemale = gender;
+    boolean isAlive = false;
+    int currentTile;
+    ArenaController arenaController = new ArenaController();
 
     public void setDistrict() {
         ArrayList<Integer> distinctDistrict = new ArrayList<Integer>();
         for (int i = 1; i <= 12; i++) {
             distinctDistrict.add(i);
-            Collections.shuffle(distinctDistrict);
         } district = distinctDistrict.get(chanceController.luckIndex(distinctDistrict.size()));
+        System.out.println(district);
     }
 
     public int getDistrict() {
@@ -29,40 +36,22 @@ public abstract class ParticipantAttributes {
     }
 
 
-    void setGender() {
-        gender = chanceController.luckIndex(2);
+    public void setGender() {
+        this.gender = chanceController.luckIndex(2);
     }
 
-    public void setLevels (int MaleOrFemale) {
+    public void setLevels() {
             strengthLevel = MaleOrFemale + chanceController.getStatisticDamage(30);
             defenceLevel = MaleOrFemale + chanceController.getStatisticDamage(30);
             attackLevel = MaleOrFemale + chanceController.getStatisticDamage(30);
         }
 
-    public int getStrengthLevel() {
-        return strengthLevel;
-    }
+        public void setCurrentTile() {
+        currentTile = chanceController.luckIndex(arenaController.getRemainingTiles());
+        }
 
-    public int getDefenceLevel() {
-        return defenceLevel;
-    }
-
-    public int getAttackLevel() {
-        return attackLevel;
-    }
-
-    public int getGender() {
-        return gender;
-    }
 
     }
-
-
-
-//
-//    public void setGender() {
-//        if (n)
-//    }
 
 
 

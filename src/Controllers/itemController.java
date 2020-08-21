@@ -4,7 +4,7 @@ import Equipables.*;
 
 import java.util.ArrayList;
 
-public class itemController {
+public class itemController extends Weapons{
     public ArrayList<Weapons> weaponManager = new ArrayList<>(); // Create an ArrayList object
     public ArrayList<Weapons> startWeapon = new ArrayList<>(); // Create an ArrayList object
 
@@ -18,9 +18,10 @@ public class itemController {
         weaponManager.add(new smallShield());
         weaponManager.add(new Sword());
 
-        //Loop through the items and check it the right instance is selected
+        //Loop through the items and check if the right instance is selected
         for (Weapons weap : weaponManager) {
-            if (weap instanceof Weapons) {
+            //This used to be an instanceof check, however IntelliJ recommended this since the other one was redundant.
+            if (weap != null) {
                 //add the item to whatever item a participant can start with
                 startWeapon.add(weap);
             }
@@ -33,9 +34,9 @@ public class itemController {
 
 
     //double check if a random class is selected
-//    public void print() {
-//        System.out.println(returnFightItem());
-//    }
+    //public void print() {
+        //System.out.println(returnFightItem());
+    //}
 
 
 }

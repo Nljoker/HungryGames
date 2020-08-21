@@ -9,6 +9,7 @@ public class chanceController {
         return random.nextInt(maxNumber);
     }
 
+    //Why do I have to use static here?
     public static int luckIndex(int luckNumber) {
         Random random = new Random();
         return random.nextInt(luckNumber);
