@@ -1,7 +1,4 @@
 package Controllers;
-import Controllers.chanceController;
-import ParticipantAttributes.competingParticipant;
-import Controllers.DayController;
 
 public  class ArenaController {
     //The arenasurface stands for the tiles in the entire game

@@ -1,6 +1,4 @@
 package Controllers;
-import ParticipantAttributes.competingParticipant;
-import Controllers.ArenaController;
 
 public class DayController extends ArenaController {
     int day;

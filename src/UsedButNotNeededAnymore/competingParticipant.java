@@ -1,15 +1,17 @@
-package ParticipantAttributes;
+package UsedButNotNeededAnymore;
 
 import Equipables.*;
-import Interfaces.*;
 import Other.*;
 import Controllers.*;
+import Food.*;
 
 public class competingParticipant extends ParticipantAttributes implements Participant {
 
 randomNameGenerator randomNameGenerator = new randomNameGenerator();
 ArenaController arenaController = new ArenaController();
 itemController itemController = new itemController();
+Food food = new MantaRay();
+Weapons weapon = null;
 
     @Override
     public void fight() {
@@ -22,6 +24,10 @@ itemController itemController = new itemController();
 
     @Override
     public void heal() {
+        if (currentHP == 99) {
+            food.healLifePoints();
+            System.out.println(currentHP);
+        }
 
     }
 
@@ -52,6 +58,9 @@ itemController itemController = new itemController();
     public boolean isAlive() {
         //Wake up the participants
         if (!isAlive) {
+            equip(getCurrentWeapon());
+            setDistrict();
+            name();
             return isAlive = true;
         } else {
             return false;
@@ -65,14 +74,20 @@ itemController itemController = new itemController();
             return randomNameGenerator.getFemaleName();
         } else if (gender == 1) {
             return randomNameGenerator.getMaleName();
-        } else
-        return null;
+        } else {
+            return null;
+        }
     }
 
     @Override
     public void equip(Weapons weapon) {
-            itemController.returnFightItem();
+        this.weapon = itemController.returnFightItem();
+            //itemController.returnFightItem();
+        //System.out.println(itemController.returnFightItem());
         }
 
+    public Weapons getCurrentWeapon() {
+        return weapon;
     }
+}
 

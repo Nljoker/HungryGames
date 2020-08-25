@@ -1,4 +1,4 @@
-package Interfaces;
+package UsedButNotNeededAnymore;
 
 import Equipables.Weapons;
 

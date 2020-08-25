@@ -1,4 +1,4 @@
-package ParticipantAttributes;
+package UsedButNotNeededAnymore;
 
 import Equipables.*;
 import Interfaces.*;
@@ -15,7 +15,7 @@ public class ParticipantAttributes {
     int attackLevel;
     int district;
     int HP = 99;
-    int currentHP = HP;
+    public int currentHP = HP;
     //0 = female | 1 = male
     int gender;
     int MaleOrFemale = gender;

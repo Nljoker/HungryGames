@@ -1,43 +1,16 @@
 package com.RaboAndCap.MayTheOddsBeEverInYourFavour;
 
 
-import Controllers.ArenaController;
-import Controllers.itemController;
-import Equipables.Sword;
-import Equipables.bowAndArrow;
-import Interfaces.Participant;
-import ParticipantAttributes.*;
-import Controllers.DayController;
-import Controllers.chanceController;
-
-
-
-import java.util.Random;
+import Controllers.ParticipantCreator;
+import ParticipantAttributes.CompetingParticipants;
+import ParticipantAttributes.Participants;
 
 public class Main {
 
     public static void main(String[] args) {
-	//Team team = new Team();
-	//team.maleContestor();
-	//team.femaleContestor();
-        competingParticipant c = new competingParticipant();
-        System.out.println(c.name());
-        System.out.println(c.name());
-        System.out.println(c.name());
-        System.out.println(c.name());
+        CompetingParticipants competingParticipants = new CompetingParticipants();
+        ParticipantCreator c = new ParticipantCreator();
         System.out.println();
-
-
-
-
-
-
-
-
-
-
-
-
         }
 
 
