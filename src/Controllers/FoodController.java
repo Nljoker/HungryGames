@@ -1,4 +1,4 @@
-package Controllers;
+/*package Controllers;
 
 import Equipables.Weapons;
 import Food.*;
@@ -24,4 +24,4 @@ public class FoodController {
         return eatDaFood.get(chanceController.luckIndex(eatDaFood.size()));
     }
 
-}
+}*/

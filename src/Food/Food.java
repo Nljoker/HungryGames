@@ -1,4 +1,4 @@
-package Food;
+/*package Food;
 
 import Interfaces.FoodInterface;
 import UsedButNotNeededAnymore.competingParticipant;
@@ -12,5 +12,5 @@ public abstract class Food extends competingParticipant implements FoodInterface
      }
 
  }
-
+*/
 

@@ -3,6 +3,7 @@ package Controllers;
 import Equipables.*;
 import ParticipantAttributes.*;
 import FightPackage.*;
+import UsedButNotNeededAnymore.Participant;
 import com.sun.nio.file.ExtendedWatchEventModifier;
 
 import java.util.ArrayList;
@@ -47,8 +48,11 @@ public class ParticipantCreator {
     public void feAndMa() {
         all.addAll(males);
         all.addAll(females);
+        for (Participants p : all) {
+            p.setName();
+        }
         //String f = Arrays.toString(all.toArray());
-        System.out.println(Arrays.toString(all.toArray()));
+        //System.out.println(Arrays.toString(all.toArray()));
 
     }
 

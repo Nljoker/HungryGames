@@ -1,4 +1,4 @@
-package Food;
+/*package Food;
 
 import Interfaces.FoodInterface;
 
@@ -15,3 +15,4 @@ public class MantaRay extends Food {
         currentHP = currentHP + 10;
     }
 }
+*/

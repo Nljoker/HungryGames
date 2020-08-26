@@ -1,4 +1,4 @@
-package FightPackage;
+package UsedButNotNeededAnymore;
 
 import Controllers.itemController;
 import Equipables.Weapons;

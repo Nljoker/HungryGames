@@ -1,5 +1,11 @@
 package Controllers;
 
+import FightPackage.FightingTime;
+import FightPackage.FindAFight;
+import ParticipantAttributes.Participants;
+
+import java.util.Collections;
+
 public  class ArenaController {
     //The arenasurface stands for the tiles in the entire game
     //a contestant can be assigned any random number between 0 and 50 to stand on.
@@ -8,17 +14,30 @@ public  class ArenaController {
     //the arena will get smaller. This could cause an issue, that too many people are on the same tile and will most likely crash the code
     //please keep this in mind when developing your code Hayven.
 
-    int numberOfTiles;
-    int remainingTiles;
+    public void startTheAnualHungryGames() {
+        ParticipantCreator participantCreator = new ParticipantCreator();
+        participantCreator.wakeUp();
+        participantCreator.feAndMa();
+        participantCreator.districtNumber();
+        participantCreator.feAndMa();
 
-    public int getRemainingTiles() {
-        remainingTiles = getNumberOfTiles() - 5;
-        return remainingTiles;
-    }
+        //Initialize the first count of the day
+        int day = 1;
 
-    public int getNumberOfTiles() {
-        numberOfTiles = 50;
-        return numberOfTiles;
+        while (participantCreator.all.size() != 1) {
+            day += 1;
+            System.out.println("+++++++++++++++++++++++++");
+            System.out.println("Today is day number " + day);
+            System.out.println("+++++++++++++++++++++++++");
+            Collections.shuffle(participantCreator.all);
+            for (Participants p : participantCreator.all) {
+                p.moveAround();
+                Participants fightP = participantCreator.area(p);
+                if(fightP != null) {
+                    new FightingTime(p, fightP);
+                }
+            }
+        }
     }
 
 }

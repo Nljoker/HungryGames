@@ -1,4 +1,4 @@
-package UsedButNotNeededAnymore;
+/*package UsedButNotNeededAnymore;
 
 import Equipables.*;
 import Interfaces.*;
@@ -51,7 +51,7 @@ public class ParticipantAttributes {
         }
 
 
-    }
+    }*/
 
 
 
