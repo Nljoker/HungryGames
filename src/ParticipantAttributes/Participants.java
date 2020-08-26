@@ -23,6 +23,7 @@ public abstract class Participants {
     public void moveAround() {
         if (isBreathing) {
             currentTile = chanceController.luckIndex(25);
+            sleep();
         }
     }
 
@@ -34,11 +35,12 @@ public abstract class Participants {
             int setDefencelevel;
 
             //Here we check the current weapon. Did they get one assigned, then levels are set. This entire game is based on luck
-            //And because I like using the chanceController
+            //And because I like using the chanceController - Edit deleted the chancecontroller from calculation here because
+            //it was giving me minus damage on HP which added it to the HP. Caused to get stuck in a loop and try to get the randomized chance every time
             if (weapon != null) {
-                setAttackLevel = (attackLevel + weapon.getSpeed()) - chanceController.getStatisticDamage(attackLevel);
-                setStrengthLevel = (strengthLevel + weapon.getDamageBonus()) - chanceController.getStatisticDamage(strengthLevel);
-                setDefencelevel = (defenceLevel + weapon.getDefence()) - chanceController.getStatisticDamage(defenceLevel);
+                setAttackLevel = (attackLevel + weapon.getSpeed());
+                setStrengthLevel = (strengthLevel + weapon.getDamageBonus());
+                setDefencelevel = (defenceLevel + weapon.getDefence());
                 //Make sure levels are set, even though the contestants should always receive a weapon
             } else {
                 setAttackLevel = attackLevel;
@@ -49,14 +51,17 @@ public abstract class Participants {
             int damageOnHP = ((Math.max(1, setAttackLevel) + setStrengthLevel) + setDefencelevel) - chanceController.getStatisticDamage(15);
             //randomize the afflicted damage to include a critical attack
             int randomizedChance = chanceController.luckIndex(99);
-            if (randomizedChance < 6 && setStrengthLevel > 30 || randomizedChance < 7 && setDefencelevel < 10) {
+            if (randomizedChance < 2/* && setStrengthLevel > 50 || randomizedChance < 4 && setDefencelevel < 8*/) {
                 opponent.currentHP = 0;
-                System.out.println(name + " Wow, looks like a critical hit! " + opponent.name + " has lost his life. GL in new simulation :)");
-            } else if (randomizedChance >= 80 && setAttackLevel < 10) {
+                System.out.println(name + "Wow, looks like a critical hit! " + opponent.name + " has lost his life. GL in new simulation :)");
+            } else if (randomizedChance >= 98 /*&& setAttackLevel < 5*/) {
                 opponent.currentHP = 0;
-                System.out.println("What happened there?" + name + "totally missed " + opponent.name + "but" + opponent.name + "slipped and broke vital bones");
-            } else {
+                System.out.println("What happened there? " + name + " totally missed " + opponent.name + " but " + opponent.name + " slipped and broke vital bones");
+            }  else {
                 opponent.currentHP -= damageOnHP;
+                //System.out.println(opponent.currentHP);
+                //Comment this out. Check if damage is actually being done.
+                //System.out.println(name + " hits a whopping " + damageOnHP + " on " + opponent.name);
             }
         }
 
@@ -66,7 +71,7 @@ public abstract class Participants {
     public void sleep() {
         if (currentHP < 3) {
             currentHP = 0;
-            System.out.println("Sadly" + name + "has taken too much damage.");
+            System.out.println("Sadly " + name + " has taken too much damage.");
         } else {
             currentHP = maxHP;
         }

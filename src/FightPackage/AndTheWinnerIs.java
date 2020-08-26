@@ -7,7 +7,7 @@ public class AndTheWinnerIs {
     public AndTheWinnerIs(Participants theWinner) {
         System.out.println("\n+++++++++++++++++++++++++++++++++++++++++++\n");
         System.out.println("The Anual Hungry Games have come to an end");
-        System.out.println(theWinner.getName() + "\nWins and becomes a popular person and stuff\n");
+        System.out.println(theWinner.getName() + " from District "+ theWinner.getDistrict()+ " Wins and becomes a popular person and stuff\n");
 
     }
 }

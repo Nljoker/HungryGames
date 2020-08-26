@@ -11,16 +11,17 @@ public class FightingTime {
             one.Fight(two);
             two.Fight(one);
             if (one.getCurrentHP() <= 0) {
-                System.out.println(one.getName() + " has lost his life to" + two.getName());
                 one.isCurrentlyBreathing(false);
-                System.out.println("=================" + one.getName().toUpperCase() + "DEAD" + "=================");
+                System.out.println(one.getName() + " has lost his life to " + two.getName());
+                if (!one.isBreathing()) {
+                    System.out.println("=================" + one.getName().toUpperCase() + "DEAD" + "=================");
+                }
             } else if(two.getCurrentHP() <= 0) {
-                System.out.println(two.getName() + " has lost his life to" + one.getName());
+                System.out.println(two.getName() + " has lost his life to " + one.getName());
                 two.isCurrentlyBreathing(false);
-                System.out.println("=================" + two.getName().toUpperCase() + "DEAD" + "=================");
-            } else {
-                System.out.println("Something went wrong, please try again");
-                System.out.println("Also, check your FightingTime Class");
+                if (!two.isBreathing()) {
+                    System.out.println("=================" + two.getName().toUpperCase() + "DEAD" + "=================");
+                }
             }
         }
 

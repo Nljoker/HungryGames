@@ -16,14 +16,17 @@ public class ParticipantCreator {
     ArrayList<Participants> all = new ArrayList<>();
 
     public void wakeUp() {
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 12; i++) {
             Participants participants = new CompetingParticipants();
             Weapons fightItem = itemController.returnFightItem();
+            participants.setGender();
             fightItem.equip(participants);
             if (participants.gender == 1) {
                 males.add(participants);
-            } else {
+            } else if (participants.gender == 0){
                 females.add(participants);
+            } else {
+                System.out.println("Check your wakeup() method");
             }
 
         }
@@ -72,6 +75,4 @@ public class ParticipantCreator {
         //as set in the area example above. This SHOULD remove all the dead peeps from the all list.
             all.removeIf(p -> !p.isBreathing());
     }
-
-
 }

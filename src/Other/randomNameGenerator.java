@@ -1,13 +1,19 @@
 package Other;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
-public class randomNameGenerator {
+import Controllers.ArenaController;
+import ParticipantAttributes.*;
+
+public class randomNameGenerator extends ArenaController {
     String maleName;
     String femaleName;
 
     Random rand = new Random();
+
 
     public String getMaleName() {
     ArrayList<String> maleNames = new ArrayList<>(); // Create an ArrayList object
@@ -23,7 +29,11 @@ public class randomNameGenerator {
         maleNames.add("Kanye[M]");
         maleNames.add("Malone[M]");
         maleNames.add("Marshall[M]");
-
+        maleNames.add("Roman[M]");
+        maleNames.add("Nico[M]");
+        maleNames.add("Tom[M]");
+        maleNames.add("Clyde[M]");
+        //Tried to add a distinct getter, didn't work.
         int n = rand.nextInt(maleNames.size());
         maleName = maleNames.get(n);
         return maleName;
@@ -43,7 +53,11 @@ public class randomNameGenerator {
         femaleNames.add("Emma[F]");
         femaleNames.add("Charlotte[F]");
         femaleNames.add("Abigail[F]");
-        femaleNames.add("Bonnie[F]");
+        femaleNames.add("Marjorie[F]");
+        femaleNames.add("Beach[F]");
+        femaleNames.add("Anna[F]");
+        femaleNames.add("Tanita[F]");
+        femaleNames.add("Granny[F]");
         int n = rand.nextInt(femaleNames.size());
         femaleName = femaleNames.get(n);
         return femaleName;
