@@ -1,4 +1,6 @@
-package Controllers;
+package UsedButNotNeededAnymore;
+
+import Controllers.ArenaController;
 
 public class DayController extends ArenaController {
     int day;
@@ -15,6 +17,7 @@ public class DayController extends ArenaController {
     }
 
     public void decideDayTime() {
+        //try to do something with the tiles
 
         }
 

@@ -2,7 +2,8 @@ package FightPackage;
 
 //Really, my naming conventions. I've made so many classes. This should be fight
 
-import ParticipantAttributes.*;
+
+import ParticipantAttributes.Participants;
 
 public class FightingTime {
     //You don't really want one to be able to run away. But there's a chance ...

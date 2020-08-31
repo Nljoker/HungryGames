@@ -46,7 +46,7 @@ public  class ArenaController {
             if (participantCreator.all.size() == 1)
                 break;
         }
-        //System.out.println("\n" + day + " has ended. Sleepy time." + participantCreator.all.get(chanceController.luckIndex(5)).getName() + " can't sleep\n");
+        System.out.println("day " + day + " has ended. Sleepy time. " + participantCreator.all.get(chanceController.luckIndex(participantCreator.all.size())).getName() + " can't sleep\n");
         new AndTheWinnerIs(participantCreator.all.get(0));
     }
 

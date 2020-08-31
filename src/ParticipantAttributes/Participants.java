@@ -69,8 +69,8 @@ public abstract class Participants {
     }
     //When a day passes, participants get to sleep. When you sleep, you can rest ... but ... Some people die from having taken too much damage
     public void sleep() {
-        if (currentHP < 3) {
-            currentHP = 0;
+        if (currentHP <= 3) {
+            isBreathing = false;
             System.out.println("Sadly " + name + " has taken too much damage.");
         } else {
             currentHP = maxHP;

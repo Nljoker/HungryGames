@@ -5,10 +5,7 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 
-import Controllers.ArenaController;
-import ParticipantAttributes.*;
-
-public class randomNameGenerator extends ArenaController {
+public class randomNameGenerator {
     String maleName;
     String femaleName;
 
